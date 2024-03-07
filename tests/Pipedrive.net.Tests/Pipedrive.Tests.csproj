@@ -22,14 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pipedrive.net\Pipedrive.csproj" />
+    <ProjectReference Include="..\..\src\Pipedrive.net\Pipedrive.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
     <CodeAnalysisRuleSet>..\..\pipedrive.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json" />
-  </ItemGroup>
 </Project>
