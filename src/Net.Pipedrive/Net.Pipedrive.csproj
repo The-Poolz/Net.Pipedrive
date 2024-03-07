@@ -14,7 +14,6 @@
     <PackageId>Net.Pipedrive</PackageId>
     <PackageTags>pipedrive;crm</PackageTags>
 	<PackageProjectUrl>https://github.com/The-Poolz/Net.Pipedrive</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/The-Poolz/Net.Pipedrive/master/LICENSE</PackageLicenseUrl>
     <PackageReleaseNotes>https://github.com/The-Poolz/Net.Pipedrive/releases/tag/v1.0.0</PackageReleaseNotes>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/The-Poolz/Net.Pipedrive</RepositoryUrl>
@@ -25,8 +24,13 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
