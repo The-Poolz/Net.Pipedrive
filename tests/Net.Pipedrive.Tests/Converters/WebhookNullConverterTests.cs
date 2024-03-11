@@ -1,7 +1,7 @@
-﻿using Net.Pipedrive.Webhooks;
+﻿using Xunit;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Xunit;
+using Net.Pipedrive.Webhooks;
 
 namespace Net.Pipedrive.Tests.Converters
 {
@@ -12,7 +12,7 @@ namespace Net.Pipedrive.Tests.Converters
             [Fact]
             public void DeserializesObjectCorrectly()
             {
-                var json = "{ \"v\": 1, \"current\": null, \"previous\": null }";
+                const string json = "{ \"v\": 1, \"current\": null, \"previous\": null }";
                 var result = JsonConvert.DeserializeObject<WebhookResponse<WebhookOrganization>>(json);
 
                 Assert.NotNull(result);
@@ -24,7 +24,7 @@ namespace Net.Pipedrive.Tests.Converters
             [Fact]
             public void DeserializesNonExistingPropertiesAsNull()
             {
-                var json = "{ \"v\": 1 }";
+                const string json = "{ \"v\": 1 }";
                 var result = JsonConvert.DeserializeObject<WebhookResponse<WebhookOrganization>>(json);
 
                 Assert.NotNull(result);
@@ -70,7 +70,7 @@ namespace Net.Pipedrive.Tests.Converters
                 Assert.NotNull(jsonObject);
                 Assert.Equal(3, jsonObject["v"]?.Value<int>());
                 Assert.Equal(1, jsonObject["current"]?["Id"]?.Value<int>());
-                Assert.Equal("TestOrg", jsonObject["current"]?["Name"]?.Value<string>());
+                Assert.Equal("TestOrg", jsonObject["current"]?["name"]?.Value<string>());
                 Assert.Null(jsonObject["previous"]?.Value<WebhookOrganization>());
             }
         }
