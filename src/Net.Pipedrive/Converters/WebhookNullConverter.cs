@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -14,17 +15,32 @@ namespace Net.Pipedrive.Converters
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var token = JToken.Load(reader);
-            if (token == null || token.Type == JTokenType.Null)
-            {
-                return null;
-            }
-
-            return token.ToObject(objectType);
+            return token.Type == JTokenType.Null ? null : token.ToObject(objectType);
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new System.NotImplementedException();
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                var properties = value.GetType().GetProperties().Where(p => p.CanRead);
+
+                writer.WriteStartObject();
+
+                foreach (var property in properties)
+                {
+                    var propertyValue = property.GetValue(value);
+                    var propertyType = property.PropertyType;
+
+                    writer.WritePropertyName(property.Name);
+                    serializer.Serialize(writer, propertyValue, propertyType);
+                }
+
+                writer.WriteEndObject();
+            }
         }
     }
 }
