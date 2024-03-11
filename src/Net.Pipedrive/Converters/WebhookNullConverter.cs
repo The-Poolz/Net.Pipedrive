@@ -26,20 +26,22 @@ namespace Net.Pipedrive.Converters
             }
             else
             {
-                var properties = value.GetType().GetProperties().Where(p => p.CanRead);
+                serializer.Serialize(writer, value); // Infinity loop exception
 
-                writer.WriteStartObject();
+                //var properties = value.GetType().GetProperties().Where(p => p.CanRead);
 
-                foreach (var property in properties)
-                {
-                    var propertyValue = property.GetValue(value);
-                    var propertyType = property.PropertyType;
+                //writer.WriteStartObject();
 
-                    writer.WritePropertyName(property.Name);
-                    serializer.Serialize(writer, propertyValue, propertyType);
-                }
+                //foreach (var property in properties)
+                //{
+                //    var propertyValue = property.GetValue(value);
+                //    var propertyType = property.PropertyType;
 
-                writer.WriteEndObject();
+                //    writer.WritePropertyName(property.Name);
+                //    serializer.Serialize(writer, propertyValue, propertyType);
+                //}
+
+                //writer.WriteEndObject();
             }
         }
     }
