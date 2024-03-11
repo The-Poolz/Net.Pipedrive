@@ -5,7 +5,7 @@ using Net.Pipedrive.Helpers;
 
 namespace Net.Pipedrive.Internal
 {
-    public static class ApiInfoParser
+    internal static class ApiInfoParser
     {
         const RegexOptions regexOptions =
              RegexOptions.Compiled |
