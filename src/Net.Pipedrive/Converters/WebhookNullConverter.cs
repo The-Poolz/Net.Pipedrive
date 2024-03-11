@@ -53,9 +53,7 @@ namespace Net.Pipedrive.Converters
                     StringEscapeHandling = serializer.StringEscapeHandling,
                     TraceWriter = serializer.TraceWriter,
                     TypeNameHandling = serializer.TypeNameHandling,
-                    TypeNameAssemblyFormatHandling = serializer.TypeNameAssemblyFormatHandling,
-                    Binder = serializer.Binder,
-                    TypeNameAssemblyFormat = serializer.TypeNameAssemblyFormat
+                    TypeNameAssemblyFormatHandling = serializer.TypeNameAssemblyFormatHandling
                 });
                 safeSerializer.Serialize(writer, value);
             }
