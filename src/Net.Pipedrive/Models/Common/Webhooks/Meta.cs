@@ -1,8 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Net.Pipedrive.Webhooks;
 using Newtonsoft.Json.Converters;
 
-namespace Net.Pipedrive.Webhooks
+namespace Net.Pipedrive.Models.Common.Webhooks
 {
     /// <summary>
     /// Pipedrive webhook meta block https://pipedrive.readme.io/docs/guide-for-webhooks#section-webhooks-meta-block
@@ -13,10 +14,10 @@ namespace Net.Pipedrive.Webhooks
         public long V { get; set; }
 
         [JsonProperty("action")]
-        public string Action { get; set; }
+        public EventAction Action { get; set; }
 
         [JsonProperty("object")]
-        public string Object { get; set; }
+        public EventObject Object { get; set; }
 
         [JsonProperty("id")]
         public long Id { get; set; }
