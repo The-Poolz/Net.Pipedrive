@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Net.Pipedrive.Helpers;
+using Net.Pipedrive.Models.Common.Webhooks;
 using Net.Pipedrive.Webhooks;
 using Newtonsoft.Json;
 

@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Net.Pipedrive.Webhooks;
 using Net.Pipedrive.Converters;
+using Net.Pipedrive.Models.Common.Webhooks;
 
 namespace Net.Pipedrive.Tests.Converters
 {
