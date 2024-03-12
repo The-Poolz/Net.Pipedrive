@@ -2,6 +2,10 @@
 
 > **Note** This package was based on [Pipedrive.net package](https://github.com/DavidRouyer/pipedrive-dotnet). The code up to [this commit](https://github.com/DavidRouyer/pipedrive-dotnet/commit/57896b1057cc29a0cef060986b9263d5997a5f48) was taken as a basis.
 
+## Debugging
+
+You can debug this library right from your application by configuring the [NuGet symbol server](https://docs.microsoft.com/en-us/nuget/create-packages/symbol-packages-snupkg#nugetorg-symbol-server).
+
 ## Getting started
 
 ### Set the API Key and URL for your project
