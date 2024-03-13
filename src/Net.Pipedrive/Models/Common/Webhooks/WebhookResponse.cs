@@ -1,9 +1,10 @@
 ﻿using Net.Pipedrive.Converters;
+using Net.Pipedrive.Webhooks;
 using Newtonsoft.Json;
 
-namespace Net.Pipedrive.Webhooks
+namespace Net.Pipedrive.Models.Common.Webhooks
 {
-    public class WebhookResponse<T> : IWebhookResponse<T>
+    public class WebhookResponse<T> : WebhookMetaResponse, IWebhookResponse<T>
     {
         [JsonProperty("v")]
         public long V { get; set; }
@@ -11,8 +12,11 @@ namespace Net.Pipedrive.Webhooks
         [JsonProperty("matches_filters")]
         public MatchesFilters MatchesFilters { get; set; }
 
-        [JsonProperty("meta")]
-        public Meta Meta { get; set; }
+        [JsonProperty("event")]
+        public string Event { get; set; }
+
+        [JsonProperty("retry")]
+        public long Retry { get; set; }
 
         [JsonConverter(typeof(WebhookNullConverter))]
         [JsonProperty("previous")]
@@ -21,11 +25,5 @@ namespace Net.Pipedrive.Webhooks
         [JsonConverter(typeof(WebhookNullConverter))]
         [JsonProperty("current")]
         public T Current { get; set; }
-
-        [JsonProperty("event")]
-        public string Event { get; set; }
-
-        [JsonProperty("retry")]
-        public long Retry { get; set; }
     }
 }

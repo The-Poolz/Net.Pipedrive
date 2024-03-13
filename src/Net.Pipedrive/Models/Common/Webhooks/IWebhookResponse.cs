@@ -1,4 +1,6 @@
-﻿namespace Net.Pipedrive.Webhooks
+﻿using Net.Pipedrive.Models.Common.Webhooks;
+
+namespace Net.Pipedrive.Webhooks
 {
     public interface IWebhookResponse<T>
     {
