@@ -3,7 +3,7 @@
     <AssemblyName>Net.Pipedrive</AssemblyName>
     <Title>Net.Pipedrive</Title>
     <Description>Net.Pipedrive is an async .NET Standard client for pipedrive.com</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>ArdenHide, Lomet</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
 	<Company>The-Poolz</Company>
@@ -13,7 +13,7 @@
     <PackageId>Net.Pipedrive</PackageId>
     <PackageTags>pipedrive;crm</PackageTags>
 	<PackageProjectUrl>https://github.com/The-Poolz/Net.Pipedrive</PackageProjectUrl>
-    <PackageReleaseNotes>https://github.com/The-Poolz/Net.Pipedrive/releases/tag/v1.0.1</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/The-Poolz/Net.Pipedrive/releases/tag/v1.0.2</PackageReleaseNotes>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/The-Poolz/Net.Pipedrive</RepositoryUrl>
     <SignAssembly>true</SignAssembly>
